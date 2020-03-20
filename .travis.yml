@@ -1,0 +1,8 @@
+sudo: required
+services:
+    - docker
+script:
+    - docker build -t adityasuresh/node .
+    - docker images adityasuresh/node
+    
+

@@ -2,7 +2,17 @@ sudo: required
 services:
     - docker
 script:
-    - docker build -t adityasuresh/node .
-    - docker images adityasuresh/node
+    - docker build -t adityasuresh1/node .
+    - docker images adityasuresh1/node
+
+before_deploy:
+    - docker login -u adityasuresh1 -p LaDecima92:48
+
+deploy:
+    provider: script
+    script: docker push adityasuresh1/node
+    on:
+        branch: master
+        
     
 
